@@ -103,6 +103,7 @@ static void parse_options(struct exfat* ef, const char* options)
 	ef->gid = get_int_option(options, "gid", 10, getegid());
 
 	ef->noatime = match_option(options, "noatime");
+	ef->showexec = match_option(options, "showexec");
 }
 
 static bool verify_vbr_checksum(struct exfat_dev* dev, void* sector,

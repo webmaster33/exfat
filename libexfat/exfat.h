@@ -83,6 +83,7 @@ struct exfat_node
 	bool is_cached : 1;
 	bool is_dirty : 1;
 	bool is_unlinked : 1;
+	bool is_executable : 1;
 	uint64_t size;
 	time_t mtime, atime;
 	le16_t name[EXFAT_NAME_MAX + 1];
@@ -118,7 +119,8 @@ struct exfat
 	uid_t uid;
 	gid_t gid;
 	int ro;
-	bool noatime;
+	bool noatime : 1;
+	bool showexec : 1;
 };
 
 /* in-core nodes iterator */
