@@ -119,6 +119,7 @@ struct exfat
 	gid_t gid;
 	int ro;
 	bool noatime;
+	enum { EXFAT_REPAIR_NO, EXFAT_REPAIR_ASK, EXFAT_REPAIR_YES } repair;
 };
 
 /* in-core nodes iterator */
