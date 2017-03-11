@@ -7,17 +7,40 @@
 .SH SYNOPSIS
 .B exfatfsck
 [
-.B \-V
+.B \-a
+|
+.B \-n
+|
+.B \-p
+|
+.B \-r
 ]
 .I device
+.br
+.B exfatfsck
+[
+.B \-V
+]
 
 .SH DESCRIPTION
 .B exfatfsck
-checks an exFAT file system for errors. Note that it cannot repair corrupted
-FS, it just reports found errors.
+checks an exFAT file system for errors. It can repair a couple of them.
 
 .SH COMMAND LINE OPTIONS
 Command line options available:
+.TP
+.BI \-a
+Automatically repair the file system. No user intervention required.
+.TP
+.BI \-n
+No-operation mode: non-interactively check for errors, but don't write
+anything to the file system.
+.TP
+.BI \-p
+Same as \fB\-a\fR for compatibility with other *fsck.
+.TP
+.BI \-r
+Interactively repair the file system. This is the default mode.
 .TP
 .BI \-V
 Print version and copyright.
